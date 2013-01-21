@@ -10,4 +10,17 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@ 
+	dh $@
+
+DEB_HOST_ARCH           ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+ifeq ($(DEB_HOST_ARCH),amd64)
+	rainbowdir=amd64
+else
+	rainbowdir=i386
+endif
+
+override_dh_auto_install:
+	dh_installdirs
+	install $(rainbowdir)/* $(CURDIR)/debian/rainbowcrack/usr/share/rainbowcrack/
+	install debian/helper-script/* $(CURDIR)/debian/rainbowcrack/usr/bin/

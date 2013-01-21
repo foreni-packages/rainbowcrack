@@ -1,15 +1,21 @@
 Source: rainbowcrack
-Section: unknown
+Section: utils
 Priority: extra
 Maintainer: Devon Kearns <dookie@kali.org>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.3
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Git: git://git.debian.org/collab-maint/rainbowcrack.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/rainbowcrack.git;a=summary
+Homepage: http://project-rainbowcrack.com/index.htm
+Vcs-Git: ssh://git@git.kali.org/packages/rainbowcrack.git
+Vcs-Browser: http://git.kali.org/gitweb/?p=packages/rainbowcrack.git;a=summary
 
 Package: rainbowcrack
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${shlibs:Depends}, ${misc:Depends}, libstdc++6
+Description: Rainbow table password cracker
+ RainbowCrack is a general propose implementation of 
+ Philippe Oechslin's faster time-memory trade-off technique. 
+ It crack hashes with rainbow tables.
+ .
+ RainbowCrack uses time-memory tradeoff algorithm to crack 
+ hashes. It differs from the hash crackers that use brute 
+ force algorithm.
