@@ -1,0 +1,4 @@
+version=3
+# this file is only for monitoring, it can't be used to import because
+# we need to combine binaries for linux32 and linux64
+http://project-rainbowcrack.com/index.htm (?:.*/)?(?:rainbowcrack-)(.*)(?:-linux64)\.zip
