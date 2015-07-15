@@ -5,11 +5,11 @@ Maintainer: Devon Kearns <dookie@kali.org>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.3
 Homepage: http://project-rainbowcrack.com/index.htm
-Vcs-Git: ssh://git@git.kali.org/packages/rainbowcrack.git
+Vcs-Git: git://git.kali.org/packages/rainbowcrack.git
 Vcs-Browser: http://git.kali.org/gitweb/?p=packages/rainbowcrack.git;a=summary
 
 Package: rainbowcrack
-Architecture: any
+Architecture: amd64 i386
 Depends: ${shlibs:Depends}, ${misc:Depends}, libstdc++6
 Description: Rainbow table password cracker
  RainbowCrack is a general propose implementation of 
