@@ -1,5 +1,5 @@
 
-RainbowCrack 1.5 readme
+RainbowCrack 1.6.1 readme
 
 Introduction
 --------------------------------
@@ -7,16 +7,20 @@ RainbowCrack is a general propose implementation of Philippe Oechslin's faster t
 It cracks hashes with rainbow tables.
 
 Files:
-    rtgen/rtgen.exe         rainbow table generation program
-    rtsort/rtsort.exe       rainbow table sort program
-    rt2rtc/rt2rtc.exe       rainbow table conversion program
-    rtc2rt/rtc2rt.exe       rainbow table conversion program
-    rcrack/rcrack.exe       rainbow table lookup program (command line user interface)
-    rcrack_gui.exe          [windows only] rainbow table lookup program (graphics user interface)
-    alglib0.so/alglib0.dll  shared library
-    charset.txt             charset configuration file
-    profile.txt             [windows only] profile configuration file for rcrack_gui.exe program
-    readme.txt              this file
+    rtgen.exe           rainbow table generation program
+    rtsort.exe          rainbow table sort program
+    rt2rtc.exe          rainbow table conversion program
+    rtc2rt.exe          rainbow table conversion program
+    rcrack.exe          rainbow table lookup program (              command line user interface                                   )
+    rcrack_gui.exe      rainbow table lookup program (Windows only, graphics user interface                                       )
+    rcrack_cuda.exe     rainbow table lookup program (Windows only, command line user interface, GPU acceleration with NVIDIA GPUs)
+    rcrack_cuda_gui.exe rainbow table lookup program (Windows only, graphics user interface,     GPU acceleration with NVIDIA GPUs)
+    rcrack_cl.exe       rainbow table lookup program (Windows only, command line user interface, GPU acceleration with AMD GPUs   )
+    rcrack_cl_gui.exe   rainbow table lookup program (Windows only, graphics user interface,     GPU acceleration with AMD GPUs   )
+    alglib0.dll         shared library
+    charset.txt         charset configuration file
+    profile.txt         profile configuration file for rcrack*_gui.exe program (Windows only)
+    readme.txt          this file
 
 Features:
 - Full time-memory tradeoff tool suites, including rainbow table generation, sort, conversion and lookup
@@ -24,53 +28,56 @@ Features:
 - Support rainbow table of any charset
 - Support rainbow table in raw file format (.rt) and compact file format (.rtc)
 - Computation on multi-core processor support
-- Computation on GPU (via NVIDIA CUDA technology) support (this feature is not included in this package)
-- Computation on multi-GPU (via NVIDIA CUDA technology) support (this feature is not included in this package)
-- Runs on 32-bit Windows operating systems
-    Windows XP 32-bit
-    Windows Vista 32-bit
-    Windows 7 32-bit
-    ...
-- Runs on 64-bit Windows operating systems
-    Windows XP 64-bit
-    Windows Vista 64-bit
-    Windows 7 64-bit
-    ...
-- Runs on 32-bit Linux operating systems (x86 only)
-    Ubuntu 9.10 32-bit
-    Ubuntu 10.04.1 32-bit
-    Redhat Enterprise Linux 5.5 32-bit
-    openSUSE 11.3 32-bit
-    ...
-- Runs on 64-bit Linux operating systems (x86_64 only)
-    Ubuntu 9.10 64-bit
-    Ubuntu 10.04.1 64-bit
-    Redhat Enterprise Linux 5.5 64-bit
-    openSUSE 11.3 64-bit
-    ...
+- GPU acceleration with NVIDIA GPUs (CUDA technology)
+- GPU acceleration with AMD GPUs (OpenCL technology)
+- GPU acceleration with multiple GPUs
+- Runs on Windows operating systems
+- Runs on Linux operating systems
 - Unified rainbow table file format on all supported operating systems
 - Command line user interface
-- Graphics user interface (Windows only)
+- Graphics user interface
 
 System Requirements
 --------------------------------
-Operating System:   32-bit Windows, 64-bit Windows, 32-bit Linux, 64-bit Linux
-Memory:             512 MB minimal, 2 GB recommended on 32-bit operating systems
-                    1 GB minimal, the larger the better on 64-bit operating systems
+Operating System: 32-bit / 64-bit Windows 7 / Windows 8
+                  32-bit / 64-bit Linux
+Memory:           32-bit operating systems: 1 GB minimal, 2 GB recommended
+                  64-bit operating systems: 2 GB minimal, 4 GB to 8 GB recommended
+GPU:              CUDA enabled NVIDIA GPUs
+                  OpenCL enabled AMD GPUs
+
+Rainbow Tables Supported by rcrack_cuda*.exe / rcrack_cl*.exe
+--------------------------------
+lm_alpha-numeric#1-7
+lm_ascii-32-65-123-4#1-7
+{ntlm,md5,sha1,sha256}_ascii-32-95#1-6
+{ntlm,md5,sha1,sha256}_ascii-32-95#1-7
+{ntlm,md5,sha1,sha256}_mixalpha-numeric#1-7
+{ntlm,md5,sha1,sha256}_mixalpha-numeric#1-8
+{ntlm,md5,sha1,sha256}_loweralpha-numeric#1-8
+{ntlm,md5,sha1,sha256}_loweralpha-numeric#1-9
 
 Documentation
 --------------------------------
-Documentation of RainbowCrack 1.5 software is available at http://project-rainbowcrack.com/.
+Documentation of RainbowCrack 1.6.1 software is available at http://project-rainbowcrack.com/.
 
 Version History
 --------------------------------
+Changes in version 1.6.1
+- NVIDIA GPUs with compute capability 5.* supported
+- NVIDIA GPUs with compute capability 1.* no longer supported
+
+Changes in version 1.6
+- Support GPU acceleration with AMD GPUs (OpenCL technology)
+- Improved performance of NVIDIA GPU acceleration (CUDA technology)
+
 Changes in version 1.5
 - Support 64-bit Windows operating systems
 - Support 32-bit Linux operating systems (x86 only)
 - Support 64-bit Linux operating systems (x86_64 only)
 - Support rainbow table file larger than 2 GB
 
-Changes in version 1.41
+Changes in version 1.4.1
 - Improved performance of rcrack and rcrack_gui program
 
 Changes in version 1.4
@@ -98,12 +105,12 @@ Changes in version 1.2
 Changes in version 1.1
 - Custom charset support
 
-Changes in version 1.01
+Changes in version 1.0.1
 - Bugfix
 
 Changes in version 1.0
 - Initial release
 
-Copyright 2003-2010 RainbowCrack Project. All rights reserved.
-Official Website: http://project-rainbowcrack.com/
-August 26, 2010
+Copyright 2003-2015 RainbowCrack Project. All rights reserved.
+http://project-rainbowcrack.com/
+April 25, 2015
